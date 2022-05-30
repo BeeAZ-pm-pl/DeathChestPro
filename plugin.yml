@@ -1,0 +1,6 @@
+name: DeathChestPro
+main: BeeAZ\DeathChestPro\DeathChestPro
+api: 4.0.0
+version: 0.0.1
+author: BeeAZ
+description: Create a storage chest when the player deaths
