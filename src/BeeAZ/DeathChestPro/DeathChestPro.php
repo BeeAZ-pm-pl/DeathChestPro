@@ -21,7 +21,7 @@ class DeathChestPro extends PluginBase implements Listener {
 		$player = $event->getPlayer();
 		$cfg = $this->getConfig()->getAll();
 		$x = intval($player->getPosition()->getX());
-		$y = intval($player->getPosition()->getY();
+		$y = intval($player->getPosition()->getY());
 		$z = intval($player->getPosition()->getZ());
 		$world = $player->getWorld();
 		$this->getServer()->broadcastMessage(str_replace(["{x}", "{y}", "{z}", "{world}", "{player}"], [$x, $y, $z, $world->getFolderName(), $player->getName()], $cfg["message"]));
