@@ -10,12 +10,12 @@ use pocketmine\block\tile\Chest;
 
 class DeathChestPro extends PluginBase implements Listener {
 
-    public function onEnable(): void {
+    protected function onEnable(): void {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->saveDefaultConfig();
     }
 
-    public function onDeath(PlayerDeathEvent $event) {
+    public function onDeath(PlayerDeathEvent $event): void {
         $event->setKeepInventory(true);
         $player = $event->getPlayer();
         $playerPos = $player->getPosition();
