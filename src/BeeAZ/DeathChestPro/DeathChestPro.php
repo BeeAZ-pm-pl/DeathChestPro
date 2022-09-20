@@ -23,6 +23,9 @@ class DeathChestPro extends PluginBase implements Listener {
         $y = (int) $playerPos->getY();
         $z = (int) $playerPos->getZ();
         $world = $player->getWorld();
+        if (count($player->getInventory()->getContents()) == 0 && count($player->getArmorInventory()->getContents()) == 0) {
+            return;
+        }
         $this->getServer()->broadcastMessage(str_replace(["{x}", "{y}", "{z}", "{world}", "{player}"], [$x, $y, $z, $world->getFolderName(), $player->getName()], $this->getConfig()->get("message")));
         $world->setBlock($playerPos, VanillaBlocks::CHEST());
         $world->setBlock($playerPos->add(1, 0, 0), VanillaBlocks::CHEST());
