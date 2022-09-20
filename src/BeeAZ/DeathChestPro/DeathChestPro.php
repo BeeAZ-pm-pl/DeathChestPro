@@ -17,6 +17,7 @@ class DeathChestPro extends PluginBase implements Listener {
     }
 
     public function onDeath(PlayerDeathEvent $event) {
+        $event->setKeepInventory(true);
         $player = $event->getPlayer();
         $cfg = $this->getConfig()->getAll();
         $x = (int) $player->getPosition()->getX();
