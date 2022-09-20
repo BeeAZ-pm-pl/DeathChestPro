@@ -42,6 +42,7 @@ class DeathChestPro extends PluginBase implements Listener {
 			$tile = $world->getTile(new Position($x, $y, $z, $world));
 			$this->broadcast($world, $player, $x, $y, $z);
 			if ($tile instanceof Chest) {
+				$tile->setName($player->getName() . "'s Chest");
 				$this->handleItems($player, $tile);
 			}
 		} else {
@@ -53,6 +54,7 @@ class DeathChestPro extends PluginBase implements Listener {
 			if ($tile instanceof Chest && $tile2 instanceof Chest) {
 				$tile->pairWith($tile2);
 				$tile2->pairWith($tile);
+				$tile2->setName($player->getName() . "'s Chest");
 				$this->handleItems($player, $tile);
 			}
 		}
